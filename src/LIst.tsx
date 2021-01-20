@@ -2,7 +2,9 @@ import React from "react";
 import style from "styled-components";
 
 const Container = style.div`
-    
+    width: 80%;
+    margin: 0 auto;
+    max-width: 500px;
 `;
 
 const Sheet = style.div`
@@ -23,6 +25,7 @@ const Code = style.div`
 
 const How = style.h3`
     color: #61dafb;
+    font-size: 30px;
 `;
 
 export const List = () => {
