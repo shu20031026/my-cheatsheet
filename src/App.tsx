@@ -4,53 +4,79 @@ import style from "styled-components";
 import { List } from "./LIst";
 import { Home } from "./Home";
 import { useState } from "react";
-
-const Top = style.header`
-  flex-direction: column;
-`;
+import { mockData } from "./Structure";
 
 const Container = style.div`
   background-color: #222e39;
   height: 100vh;
   width: 100vw;
+  top: 0;
+  text-align: center;
+  display: block;
+  overflow: scroll;
 `;
 
-const UseLang = style.h1`
+const Top = style.div`
+  flex-direction: column;
+  padding: .4em .8em;
+  text-align: center;
+  display: block;
+  flex-direction: column;
+`;
+
+const Box = style.div`
+
+`;
+
+const Language = style.button`
+  font-size:40px;
   color: #61dafb;
-  font-size: 50px;
+  text-align: center;
   font-family: 'Alata', sans-serif;
-`;
-
-const HomeButton = style.button`
-right: 28px;
-top: 90px;
-padding: 10px 20px;
-background: #3f4249;
-color: #75777c;
-align-items: center;
-border-radius: 5px;
-cursor: pointer;
-border: 1px solid transparent;
-font-size: 14px;
-font-weight: bold;
-text-align: right;
-display: flex;
+  background-color: #00000000;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  margin: 0.5em 0;
+  padding: 0;
+  appearance: none;
+  overflow: auto;
 `;
 
 function App() {
-  const [state, setstate] = useState(<List />);
-  const changeState = () => {
-    setstate(<Home />);
-  };
-
   return (
-    <Container>
-      <Top>
-        <UseLang>React CheatSheet</UseLang>
-        <HomeButton onClick={changeState}>home</HomeButton>
-      </Top>
-      {state}
-    </Container>
+    <div>
+      <List />
+      <Container>
+        <Top>
+          {/* mapを使って表したい */}
+          <Box>
+            <Language>{mockData[0].name}</Language>
+          </Box>
+          <Box>
+            <Language>{mockData[1].name}</Language>
+          </Box>
+          <Box>
+            <Language>{mockData[2].name}</Language>
+          </Box>
+          <Box>
+            <Language>{mockData[3].name}</Language>
+          </Box>
+          <Box>
+            <Language>{mockData[4].name}</Language>
+          </Box>
+          <Box>
+            <Language>{mockData[5].name}</Language>
+          </Box>
+          <Box>
+            <Language>{mockData[6].name}</Language>
+          </Box>
+          <Box>
+            <Language>{mockData[7].name}</Language>
+          </Box>
+        </Top>
+      </Container>
+    </div>
   );
 }
 

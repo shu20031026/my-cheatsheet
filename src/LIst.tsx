@@ -1,5 +1,6 @@
 import React from "react";
 import style from "styled-components";
+import { mockData } from "./Structure";
 
 const Container = style.div`
     width: 80%;
@@ -31,13 +32,10 @@ const How = style.h3`
 export const List = () => {
   return (
     <Container>
+      {/* map使ってcontentsの数だけ繰り返し */}
       <Sheet>
-        <How>create-react-app</How>
-        <Code>create-react-app YOUR_APP_NAME</Code>
-      </Sheet>
-      <Sheet>
-        <How>a</How>
-        <Code>aksojinvknlsvknlk</Code>
+        <How>{mockData[0].contents[0].title}</How>
+        <Code>{mockData[0].contents[0].article}</Code>
       </Sheet>
     </Container>
   );
