@@ -5,7 +5,6 @@ import { mockData } from "./Structure";
 const Container = style.div`
     width: 80%;
     margin: 0 auto;
-    max-width: 500px;
 `;
 
 const Sheet = style.div`
@@ -32,11 +31,16 @@ const How = style.h3`
 export const List = () => {
   return (
     <Container>
-      {/* map使ってcontentsの数だけ繰り返し */}
-      <Sheet>
-        <How>{mockData[0].contents[0].title}</How>
-        <Code>{mockData[0].contents[0].article}</Code>
-      </Sheet>
+      {mockData.map((group) => {
+        {
+          group.contents.map((contents) => (
+            <Sheet>
+              <How>{contents.title}</How>
+              <Code>{contents.article}</Code>
+            </Sheet>
+          ));
+        }
+      })}
     </Container>
   );
 };

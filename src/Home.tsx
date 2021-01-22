@@ -1,26 +1,61 @@
 import React from "react";
 import style from "styled-components";
+import { mockData } from "./Structure";
+import { useState } from "react";
 
-const Language = style.div`
+const Container = style.div`
+  background-color: #222e39;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  text-align: center;
+  display: block;
+  overflow: scroll;
+`;
+
+const Top = style.div`
+  flex-direction: column;
+  padding: .4em .8em;
+  text-align: center;
+  display: block;
+  flex-direction: column;
+`;
+
+const Box = style.div`
+
+`;
+
+const Language = style.button`
   font-size:40px;
   color: #61dafb;
-  margin: 0.5em 0;
-  padding: 0.3em;
-  overflow: auto;
   text-align: center;
+  font-family: 'Alata', sans-serif;
+  background-color: #00000000;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  margin: 0.5em 0;
+  padding: 0;
+  appearance: none;
+  overflow: auto;
 `;
 
 export const Home = () => {
+  const [lang, setLang] = useState<string>("");
+
   return (
-    <div>
-      <Language>JavaScript</Language>
-      <Language>React</Language>
-      <Language>TypeScript</Language>
-      <Language>html css</Language>
-      <Language>Git</Language>
-      <Language>SQL</Language>
-      <Language>LinuxCommand</Language>
-      <Language>Shortcut</Language>
-    </div>
+    <Container>
+      <Top>
+        {/* mapを使って表したい */}
+        {mockData.map((group) => (
+          <Box>
+            <Language onClick={() => setLang(group.name)}>
+              {group.name}
+            </Language>
+          </Box>
+        ))}
+        <h1>{setLang}</h1>
+      </Top>
+    </Container>
   );
 };

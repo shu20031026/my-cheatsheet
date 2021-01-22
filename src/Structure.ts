@@ -16,9 +16,9 @@ export const mockData: IItem[] = [
         title: "Stateless component",
         article: `import React from 'react'
 
-      const YourComponent = () => <div>aaa</div>
+        const YourComponent = () => <div>aaa</div>
       
-      export default YourComponent`,
+        export default YourComponent`,
       },
       { title: "create-react-app", article: "create-react-app YOUR_APP_NAME" },
     ],
