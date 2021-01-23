@@ -1,6 +1,6 @@
 import React from "react";
 import style from "styled-components";
-import { mockData } from "./Structure";
+import { IItem, mockData } from "./Structure";
 import { useState } from "react";
 
 const Container = style.div`
@@ -43,15 +43,16 @@ const Language = style.button`
 
 interface Props {
   goList: (groupTitle: string) => void;
+  data: IItem[];
 }
 
-export const Home = ({ goList }: Props) => {
+export const Home = ({ goList, data }: Props) => {
   const [lang, setLang] = useState<string>("");
 
   return (
     <Container>
       <Top>
-        {mockData.map((group) => (
+        {data.map((group) => (
           <Box>
             <Language onClick={() => goList(group.name)}>{group.name}</Language>
           </Box>

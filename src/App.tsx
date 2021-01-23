@@ -3,7 +3,7 @@ import "./App.css";
 import style from "styled-components";
 import { List } from "./LIst";
 import { Home } from "./Home";
-import { Head } from "./Head";
+import { IItem, mockData } from "./Structure";
 
 const Mount = style.div`
   background-color: #222e39;
@@ -17,7 +17,7 @@ const Heading = style.div`
   justify-content: space-between;
 `;
 
-const Homebutton = style.button`
+const Homebutton = style.div`
   font-size:60px;
   color: #61dafb;
   font-family: 'Alata', sans-serif;
@@ -63,6 +63,7 @@ const Sarchform = style.button`
 
 function App() {
   const [page, setPage] = useState<string>("home");
+  const [data, setData] = useState<IItem[]>(mockData);
   return (
     <Mount>
       <Heading>
@@ -78,9 +79,9 @@ function App() {
       </Heading>
 
       {page === "home" ? (
-        <Home goList={(pageTitle: string) => setPage(pageTitle)} />
+        <Home goList={(pageTitle: string) => setPage(pageTitle)} data={data} />
       ) : (
-        <List goHome={() => setPage("home")} selecrtedGroup={page} />
+        <List selecrtedGroup={page} data={data} setData={setData} />
       )}
     </Mount>
   );
