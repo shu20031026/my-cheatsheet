@@ -3,16 +3,17 @@ import style from "styled-components";
 import { mockData } from "./Structure";
 
 const Container = style.div`
-    width: 80%;
-    margin: 0 auto;
+  background-color: #222e39;
+  height: 100vh;
+  width: 100vw;
+  text-align: center;
+  display: block;
+  overflow: scroll;
 `;
 
 const Sheet = style.div`
     display: block;
     flex-direction: column;
-    max-width: 1000px;
-    height: 100%;
-    padding: 20px;
 `;
 
 const Code = style.div`
@@ -21,6 +22,8 @@ const Code = style.div`
     padding: 1em;
     overflow: auto;
     color: #c5c8c6;
+    white-space: pre-wrap;
+    text-align: left;
 `;
 
 const How = style.h3`
@@ -28,19 +31,25 @@ const How = style.h3`
     font-size: 30px;
 `;
 
-export const List = () => {
+interface Props {
+  goHome: () => void;
+  selecrtedGroup: string;
+}
+
+export const List = ({ goHome, selecrtedGroup }: Props) => {
+  console.log(goHome, selecrtedGroup);
   return (
     <Container>
-      {mockData.map((group) => {
-        {
+      {mockData
+        .filter((group) => group.name === selecrtedGroup)
+        .map((group) =>
           group.contents.map((contents) => (
             <Sheet>
               <How>{contents.title}</How>
               <Code>{contents.article}</Code>
             </Sheet>
-          ));
-        }
-      })}
+          ))
+        )}
     </Container>
   );
 };

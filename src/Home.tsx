@@ -40,18 +40,19 @@ const Language = style.button`
   overflow: auto;
 `;
 
-export const Home = () => {
+interface Props {
+  goList: (groupTitle: string) => void;
+}
+
+export const Home = ({ goList }: Props) => {
   const [lang, setLang] = useState<string>("");
 
   return (
     <Container>
       <Top>
-        {/* mapを使って表したい */}
         {mockData.map((group) => (
           <Box>
-            <Language onClick={() => setLang(group.name)}>
-              {group.name}
-            </Language>
+            <Language onClick={() => goList(group.name)}>{group.name}</Language>
           </Box>
         ))}
         <h1>{setLang}</h1>
