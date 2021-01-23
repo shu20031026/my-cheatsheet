@@ -1,5 +1,6 @@
 import React from "react";
 import style from "styled-components";
+import { Home } from "./Home";
 
 const Heading = style.div`
   width: 100%;

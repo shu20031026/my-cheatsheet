@@ -11,6 +11,7 @@ const Container = style.div`
   text-align: center;
   display: block;
   overflow: scroll;
+  margin-top: 60px;
 `;
 
 const Top = style.div`

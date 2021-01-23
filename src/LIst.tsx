@@ -9,6 +9,7 @@ const Container = style.div`
   text-align: center;
   display: block;
   overflow: scroll;
+  margin-top: 60px;
 `;
 
 const Sheet = style.div`
@@ -47,6 +48,7 @@ export const List = ({ goHome, selecrtedGroup }: Props) => {
             <Sheet>
               <How>{contents.title}</How>
               <Code>{contents.article}</Code>
+              <button>delete</button>
             </Sheet>
           ))
         )}
