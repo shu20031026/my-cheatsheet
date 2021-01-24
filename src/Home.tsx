@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import { IItem } from "./Structure";
-import { useState } from "react";
 
 const Container = styled.div`
   background-color: #222e39;
@@ -45,8 +44,6 @@ interface Props {
 }
 
 export const Home = ({ goList, data }: Props) => {
-  const [lang, setLang] = useState<string>("");
-
   return (
     <Container>
       <Top>
@@ -55,7 +52,6 @@ export const Home = ({ goList, data }: Props) => {
             <Language onClick={() => goList(group.name)}>{group.name}</Language>
           </Box>
         ))}
-        <h1>{setLang}</h1>
       </Top>
     </Container>
   );

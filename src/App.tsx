@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./App.css";
 import styled from "styled-components";
-import { List } from "./LIst";
+import { List } from "./List";
 import { Home } from "./Home";
 import { Form } from "./Form";
 import { IItem, mockData } from "./Structure";
