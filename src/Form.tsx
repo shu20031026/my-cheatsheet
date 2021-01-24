@@ -96,6 +96,8 @@ export function Form({ data, setData, close }: Props) {
     });
 
     setData(editedGroup);
+    const jsonData = JSON.stringify(editedGroup);
+    localStorage.setItem("MY_CHEATSHEET", jsonData);
     close();
   };
 

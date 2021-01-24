@@ -55,7 +55,9 @@ const Homebutton = styled.div`
 
 function App() {
   const [page, setPage] = useState<string>("home");
-  const [data, setData] = useState<IItem[]>(mockData);
+  const [data, setData] = useState<IItem[]>(
+    JSON.parse(localStorage.getItem("MY_CHEATSHEET")!) ?? mockData
+  );
   const [showModal, setShowModal] = useState<boolean>(false);
 
   return (
@@ -71,6 +73,7 @@ function App() {
           />
         )}
       </Heading>
+      <div></div>
       <Line />
       {page === "home" ? (
         <Home goList={(pageTitle: string) => setPage(pageTitle)} data={data} />

@@ -69,7 +69,11 @@ export const List = ({ selecrtedGroup, data, setData }: Props) => {
       ),
     });
 
-    window.confirm("delete") && setData(editedGroup);
+    if (window.confirm("delete")) {
+      setData(editedGroup);
+      const jsonData = JSON.stringify(editedGroup);
+      localStorage.setItem("MY_CHEATSHEET", jsonData);
+    }
   };
   return (
     <Container>
