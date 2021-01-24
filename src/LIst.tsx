@@ -1,9 +1,9 @@
 import { group } from "console";
 import React from "react";
-import style from "styled-components";
+import styled from "styled-components";
 import { IItem, mockData } from "./Structure";
 
-const Container = style.div`
+const Container = styled.div`
   background-color: #222e39;
   height: 100vh;
   width: 100vw;
@@ -13,12 +13,12 @@ const Container = style.div`
   margin-top: 60px;
 `;
 
-const Sheet = style.div`
+const Sheet = styled.div`
   display: block;
   flex-direction: column;
 `;
 
-const Code = style.div`
+const Code = styled.div`
   background-color: #2e3e4d;
   margin: 0.5em 0;
   padding: 1em;
@@ -28,16 +28,16 @@ const Code = style.div`
   text-align: left;
 `;
 
-const How = style.h3`
+const How = styled.h3`
   color: #61dafb;
   font-size: 30px;
 `;
 
-const DeleteButton = style.button`
-  font-size:25px;
+const DeleteButton = styled.button`
+  font-size: 25px;
   color: #61dafb;
   text-align: center;
-  font-family: 'Alata', sans-serif;
+  font-family: "Alata", sans-serif;
   background-color: #00000000;
   border: none;
   cursor: pointer;
@@ -56,10 +56,7 @@ interface Props {
 
 export const List = ({ selecrtedGroup, data, setData }: Props) => {
   console.log(data);
-
   const deleting = (unnecessaryContentsTitle: string) => {
-    console.log(data);
-
     const editedGroup = [...data];
 
     const editGroupIndex = editedGroup.findIndex(
@@ -73,7 +70,7 @@ export const List = ({ selecrtedGroup, data, setData }: Props) => {
       ),
     });
 
-    window.confirm("ボタンをクリック！") && setData(editedGroup);
+    window.confirm("delete") && setData(editedGroup);
   };
   return (
     <Container>

@@ -4,7 +4,6 @@ export interface IItem {
     title: string;
     article: string;
   }[];
-  color: string;
 }
 
 export const mockData: IItem[] = [
@@ -20,69 +19,55 @@ export const mockData: IItem[] = [
       
         export default YourComponent`,
       },
-      { title: "create-react-app", article: "create-react-app YOUR_APP_NAME" },
     ],
-    color: "#61dafb",
   },
   {
     name: "JavaScript(ES6)",
     contents: [
-      { title: "create-react-app", article: "create-react-app YOUR_APP_NAME" },
+      {
+        title: "Arrow function",
+        article: `const sum = (a, b) => a + b
+
+      console.log(sum(2, 6)) // prints 8`,
+      },
     ],
-    color: "",
   },
   {
     name: "TypeScript",
-    contents: [
-      { title: "create-react-app", article: "create-react-app YOUR_APP_NAME" },
-      { title: "create-react-app", article: "create-react-app YOUR_APP_NAME" },
-      { title: "create-react-app", article: "create-react-app YOUR_APP_NAME" },
-    ],
-    color: "",
+    contents: [{ title: "install", article: "yarn add global typescript" }],
   },
   {
     name: "HTML5/CSS3",
     contents: [
-      { title: "create-react-app", article: "create-react-app YOUR_APP_NAME" },
-      { title: "create-react-app", article: "create-react-app YOUR_APP_NAME" },
-      { title: "create-react-app", article: "create-react-app YOUR_APP_NAME" },
+      {
+        title: "Text tag",
+        article: `<h1> </h1> --> <h6> </h6>
+      Creates headlines -- H1=largest, H6=smallest
+      `,
+      },
     ],
-    color: "",
   },
   {
     name: "GitHub",
-    contents: [
-      { title: "create-react-app", article: "create-react-app YOUR_APP_NAME" },
-      { title: "create-react-app", article: "create-react-app YOUR_APP_NAME" },
-      { title: "create-react-app", article: "create-react-app YOUR_APP_NAME" },
-    ],
-    color: "",
+    contents: [{ title: "commit", article: `git commit -m "commit massage"` }],
   },
   {
     name: "MySQL",
     contents: [
-      { title: "create-react-app", article: "create-react-app YOUR_APP_NAME" },
-      { title: "create-react-app", article: "create-react-app YOUR_APP_NAME" },
-      { title: "create-react-app", article: "create-react-app YOUR_APP_NAME" },
+      {
+        title: "Query data in columns c1, c2 from a table",
+        article: `SELECT c1, c2 FROM t;`,
+      },
     ],
-    color: "",
   },
   {
     name: "LinuxCommand",
-    contents: [
-      { title: "create-react-app", article: "create-react-app YOUR_APP_NAME" },
-      { title: "create-react-app", article: "create-react-app YOUR_APP_NAME" },
-      { title: "create-react-app", article: "create-react-app YOUR_APP_NAME" },
-    ],
-    color: "",
+    contents: [{ title: "current directry", article: `cd` }],
   },
   {
     name: "Go",
     contents: [
-      { title: "create-react-app", article: "create-react-app YOUR_APP_NAME" },
-      { title: "create-react-app", article: "create-react-app YOUR_APP_NAME" },
-      { title: "create-react-app", article: "create-react-app YOUR_APP_NAME" },
+      { title: "Shortcut of above (Infers type)", article: `msg := "Hello"` },
     ],
-    color: "",
   },
 ];
