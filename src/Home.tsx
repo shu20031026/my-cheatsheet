@@ -1,9 +1,9 @@
 import React from "react";
-import style from "styled-components";
-import { IItem, mockData } from "./Structure";
+import styled from "styled-components";
+import { IItem } from "./Structure";
 import { useState } from "react";
 
-const Container = style.div`
+const Container = styled.div`
   background-color: #222e39;
   height: 100vh;
   width: 100vw;
@@ -14,23 +14,21 @@ const Container = style.div`
   margin-top: 60px;
 `;
 
-const Top = style.div`
+const Top = styled.div`
   flex-direction: column;
-  padding: .4em .8em;
+  padding: 0.4em 0.8em;
   text-align: center;
   display: block;
   flex-direction: column;
 `;
 
-const Box = style.div`
+const Box = styled.div``;
 
-`;
-
-const Language = style.button`
-  font-size:40px;
+const Language = styled.button`
+  font-size: 40px;
   color: #61dafb;
   text-align: center;
-  font-family: 'Alata', sans-serif;
+  font-family: "Alata", sans-serif;
   background-color: #00000000;
   border: none;
   cursor: pointer;

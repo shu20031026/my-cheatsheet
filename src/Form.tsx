@@ -53,14 +53,14 @@ const NewTitle = styled.textarea`
   margin-bottom: 15px;
 `;
 const NewArticle = styled.textarea`
-  border: 2px solid #61dafb; /* 枠線 */
-  border-radius: 0.67em; /* 角丸 */
-  padding: 0.5em; /* 内側の余白量 */
-  background-color: #151e25; /* 背景色 */
-  width: 20em; /* 横幅 */
-  height: 120px; /* 高さ */
-  font-size: 1em; /* 文字サイズ */
-  line-height: 1.2; /* 行の高さ */
+  border: 2px solid #61dafb;
+  border-radius: 0.67em;
+  padding: 0.5em;
+  background-color: #151e25;
+  width: 20em;
+  height: 120px;
+  font-size: 1em;
+  line-height: 1.2;
   outline: none;
   color: white;
 `;
